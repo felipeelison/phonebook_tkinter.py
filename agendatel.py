@@ -26,7 +26,6 @@ def clear_camps() -> None:
     cb_categories.set("")
 
 def edit_contact() -> None:
-    pass
 #Take the value and typing in the txt_name
     name = txt_name.get()
     phone = txt_name.get()
@@ -36,8 +35,8 @@ def edit_contact() -> None:
                'category': category
     }
     for i in range(len(agenda)):
-        if agenda[i]['name'] == name:
-            agenda[i] = contact
+        if contact_list[i]['name'] == name:
+            contact_list[i] = contact
             messagebox.showinfo('Edit contact', 'Contact edited!')
             clear_camps()
             update_table()
@@ -45,15 +44,14 @@ def edit_contact() -> None:
         else:
             messagebox.showinfo('Edit contact','Contact not found!')
 def delete_contact() -> None:
-    pass
-#     name = txt_name.get()
-#     for i in range(len(agenda)):
-#         if agenda[i]['name'] == name:
-#             del agenda[i]
-#             messagebox.showinfo('Delete contact', 'Contact deleted!')
-#             clear_camps()
-#             update_table()
-#             break
+    name = txt_name.get()
+    for i in range(len(agenda)):
+        if contact_list[i]['name'] == name:
+            del contact_list[i]
+            messagebox.showinfo('Delete contact', 'Contact deleted!')
+            clear_camps()
+            update_table()
+            break
 def update_table() -> None:
     for line in table.get_children():
         table.delete(line)
