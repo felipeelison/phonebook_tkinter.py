@@ -3,6 +3,9 @@ from tkinter import messagebox
 from tkinter import ttk
 
 #Storage in memory
+contact_list = []
+index = 0
+
 
 def add_contact() -> None:
 #Take the value and typing in txt_name
